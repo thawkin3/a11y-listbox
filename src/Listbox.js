@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import './Listbox.css';
 
-export const Listbox = props => {
+export const Listbox = ({ items, label }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState({});
+  const [focusedItem, setFocusedItem] = useState({});
 
   return (
     <>
-      <p>
-        Choose your favorite transuranic element (actinide or transactinide).
-      </p>
+      <p>Choose your favorite fruit.</p>
       <div className="listboxArea">
-        <span id="listboxLabel">Choose an element:</span>
-        <div id="exp_wrapper">
+        <span id="listboxLabel">{label}</span>
+        <div id="listboxWrapper">
           <div className="listboxContainer">
             <button
               aria-haspopup="listbox"
@@ -19,93 +19,27 @@ export const Listbox = props => {
               id="triggerButton"
               onClick={() => setIsOpen(isOpen => !isOpen)}
             >
-              Neptunium
+              {selectedItem.label || label}
             </button>
             {isOpen && (
               <ul
-                className="optionList"
+                className="optionsList"
                 tabIndex="-1"
                 role="listbox"
                 aria-labelledby="listboxLabel"
               >
-                <li id="listboxLabel_Np" role="option">
-                  Neptunium
-                </li>
-                <li id="listboxLabel_Pu" role="option">
-                  Plutonium
-                </li>
-                <li id="listboxLabel_Am" role="option">
-                  Americium
-                </li>
-                <li id="listboxLabel_Cm" role="option">
-                  Curium
-                </li>
-                <li id="listboxLabel_Bk" role="option">
-                  Berkelium
-                </li>
-                <li id="listboxLabel_Cf" role="option">
-                  Californium
-                </li>
-                <li id="listboxLabel_Es" role="option">
-                  Einsteinium
-                </li>
-                <li id="listboxLabel_Fm" role="option">
-                  Fermium
-                </li>
-                <li id="listboxLabel_Md" role="option">
-                  Mendelevium
-                </li>
-                <li id="listboxLabel_No" role="option">
-                  Nobelium
-                </li>
-                <li id="listboxLabel_Lr" role="option">
-                  Lawrencium
-                </li>
-                <li id="listboxLabel_Rf" role="option">
-                  Rutherfordium
-                </li>
-                <li id="listboxLabel_Db" role="option">
-                  Dubnium
-                </li>
-                <li id="listboxLabel_Sg" role="option">
-                  Seaborgium
-                </li>
-                <li id="listboxLabel_Bh" role="option">
-                  Bohrium
-                </li>
-                <li id="listboxLabel_Hs" role="option">
-                  Hassium
-                </li>
-                <li id="listboxLabel_Mt" role="option">
-                  Meitnerium
-                </li>
-                <li id="listboxLabel_Ds" role="option">
-                  Darmstadtium
-                </li>
-                <li id="listboxLabel_Rg" role="option">
-                  Roentgenium
-                </li>
-                <li id="listboxLabel_Cn" role="option">
-                  Copernicium
-                </li>
-                <li id="listboxLabel_Nh" role="option">
-                  Nihonium
-                </li>
-                <li id="listboxLabel_Fl" role="option">
-                  Flerovium
-                </li>
-                <li id="listboxLabel_Mc" role="option">
-                  Moscovium
-                </li>
-                <li id="listboxLabel_Lv" role="option">
-                  Livermorium
-                </li>
-                <li id="listboxLabel_Ts" role="option">
-                  Tennessine
-                </li>
-                <li id="listboxLabel_Og" role="option">
-                  Oganesson
-                </li>
+                {items.map(item => (
+                  <li
+                    id={item.id}
+                    key={item.id}
+                    role="option"
+                    onClick={() => setSelectedItem(item)}
+                    aria-selected={selectedItem.id === item.id}
+                    className={focusedItem.id === item.id ? 'focused' : ''}
+                  >
+                    {item.label}
+                  </li>
+                ))}
               </ul>
             )}
           </div>

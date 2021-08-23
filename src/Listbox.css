@@ -21,14 +21,16 @@
   padding: 0 1em 0 1.5em;
   position: relative;
   line-height: 1.8em;
+  text-align: left;
 }
 
+[role="option"]:hover,
 [role="option"].focused {
   background: #bde4ff;
 }
 
 [role="option"][aria-selected="true"]::before {
-  content: 'âœ“';
+  content: '\2713';
   position: absolute;
   left: 0.5em;
 }
@@ -79,7 +81,7 @@ button[aria-disabled="true"] {
   top: 10px;
 }
 
-.optionList {
+.optionsList {
   border-top: 0;
   max-height: 10em;
   overflow-y: auto;
