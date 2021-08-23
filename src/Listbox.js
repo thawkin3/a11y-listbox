@@ -43,6 +43,16 @@ export const Listbox = ({ items, label }) => {
           setIsOpen(true);
         }
         break;
+      case 'Home':
+        if (isOpen) {
+          setFocusedItemIndex(0);
+        }
+        break;
+      case 'End':
+        if (isOpen) {
+          setFocusedItemIndex(items.length - 1);
+        }
+        break;
       case 'Enter':
       case 'Space':
         if (isOpen) {
