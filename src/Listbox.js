@@ -58,6 +58,7 @@ export const Listbox = ({ items, label }) => {
           <button
             aria-haspopup="listbox"
             aria-labelledby="listboxLabel triggerButton"
+            aria-expanded={isOpen}
             id="triggerButton"
             ref={triggerButtonRef}
             onClick={() => setIsOpen(isOpen => !isOpen)}
