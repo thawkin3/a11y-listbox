@@ -1,109 +1,113 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Listbox.css';
 
 export const Listbox = props => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
       <p>
         Choose your favorite transuranic element (actinide or transactinide).
       </p>
-      <div class="listbox-area">
-        <div class="left-area">
-          <span id="exp_elem">Choose an element:</span>
-          <div id="exp_wrapper">
+      <div className="listboxArea">
+        <span id="listboxLabel">Choose an element:</span>
+        <div id="exp_wrapper">
+          <div className="listboxContainer">
             <button
               aria-haspopup="listbox"
-              aria-labelledby="exp_elem exp_button"
-              id="exp_button"
+              aria-labelledby="listboxLabel triggerButton"
+              id="triggerButton"
+              onClick={() => setIsOpen(isOpen => !isOpen)}
             >
               Neptunium
             </button>
-            <ul
-              id="exp_elem_list"
-              tabindex="-1"
-              role="listbox"
-              aria-labelledby="exp_elem"
-              class="hidden"
-            >
-              <li id="exp_elem_Np" role="option">
-                Neptunium
-              </li>
-              <li id="exp_elem_Pu" role="option">
-                Plutonium
-              </li>
-              <li id="exp_elem_Am" role="option">
-                Americium
-              </li>
-              <li id="exp_elem_Cm" role="option">
-                Curium
-              </li>
-              <li id="exp_elem_Bk" role="option">
-                Berkelium
-              </li>
-              <li id="exp_elem_Cf" role="option">
-                Californium
-              </li>
-              <li id="exp_elem_Es" role="option">
-                Einsteinium
-              </li>
-              <li id="exp_elem_Fm" role="option">
-                Fermium
-              </li>
-              <li id="exp_elem_Md" role="option">
-                Mendelevium
-              </li>
-              <li id="exp_elem_No" role="option">
-                Nobelium
-              </li>
-              <li id="exp_elem_Lr" role="option">
-                Lawrencium
-              </li>
-              <li id="exp_elem_Rf" role="option">
-                Rutherfordium
-              </li>
-              <li id="exp_elem_Db" role="option">
-                Dubnium
-              </li>
-              <li id="exp_elem_Sg" role="option">
-                Seaborgium
-              </li>
-              <li id="exp_elem_Bh" role="option">
-                Bohrium
-              </li>
-              <li id="exp_elem_Hs" role="option">
-                Hassium
-              </li>
-              <li id="exp_elem_Mt" role="option">
-                Meitnerium
-              </li>
-              <li id="exp_elem_Ds" role="option">
-                Darmstadtium
-              </li>
-              <li id="exp_elem_Rg" role="option">
-                Roentgenium
-              </li>
-              <li id="exp_elem_Cn" role="option">
-                Copernicium
-              </li>
-              <li id="exp_elem_Nh" role="option">
-                Nihonium
-              </li>
-              <li id="exp_elem_Fl" role="option">
-                Flerovium
-              </li>
-              <li id="exp_elem_Mc" role="option">
-                Moscovium
-              </li>
-              <li id="exp_elem_Lv" role="option">
-                Livermorium
-              </li>
-              <li id="exp_elem_Ts" role="option">
-                Tennessine
-              </li>
-              <li id="exp_elem_Og" role="option">
-                Oganesson
-              </li>
-            </ul>
+            {isOpen && (
+              <ul
+                className="optionList"
+                tabIndex="-1"
+                role="listbox"
+                aria-labelledby="listboxLabel"
+              >
+                <li id="listboxLabel_Np" role="option">
+                  Neptunium
+                </li>
+                <li id="listboxLabel_Pu" role="option">
+                  Plutonium
+                </li>
+                <li id="listboxLabel_Am" role="option">
+                  Americium
+                </li>
+                <li id="listboxLabel_Cm" role="option">
+                  Curium
+                </li>
+                <li id="listboxLabel_Bk" role="option">
+                  Berkelium
+                </li>
+                <li id="listboxLabel_Cf" role="option">
+                  Californium
+                </li>
+                <li id="listboxLabel_Es" role="option">
+                  Einsteinium
+                </li>
+                <li id="listboxLabel_Fm" role="option">
+                  Fermium
+                </li>
+                <li id="listboxLabel_Md" role="option">
+                  Mendelevium
+                </li>
+                <li id="listboxLabel_No" role="option">
+                  Nobelium
+                </li>
+                <li id="listboxLabel_Lr" role="option">
+                  Lawrencium
+                </li>
+                <li id="listboxLabel_Rf" role="option">
+                  Rutherfordium
+                </li>
+                <li id="listboxLabel_Db" role="option">
+                  Dubnium
+                </li>
+                <li id="listboxLabel_Sg" role="option">
+                  Seaborgium
+                </li>
+                <li id="listboxLabel_Bh" role="option">
+                  Bohrium
+                </li>
+                <li id="listboxLabel_Hs" role="option">
+                  Hassium
+                </li>
+                <li id="listboxLabel_Mt" role="option">
+                  Meitnerium
+                </li>
+                <li id="listboxLabel_Ds" role="option">
+                  Darmstadtium
+                </li>
+                <li id="listboxLabel_Rg" role="option">
+                  Roentgenium
+                </li>
+                <li id="listboxLabel_Cn" role="option">
+                  Copernicium
+                </li>
+                <li id="listboxLabel_Nh" role="option">
+                  Nihonium
+                </li>
+                <li id="listboxLabel_Fl" role="option">
+                  Flerovium
+                </li>
+                <li id="listboxLabel_Mc" role="option">
+                  Moscovium
+                </li>
+                <li id="listboxLabel_Lv" role="option">
+                  Livermorium
+                </li>
+                <li id="listboxLabel_Ts" role="option">
+                  Tennessine
+                </li>
+                <li id="listboxLabel_Og" role="option">
+                  Oganesson
+                </li>
+              </ul>
+            )}
           </div>
         </div>
       </div>

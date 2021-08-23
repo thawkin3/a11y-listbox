@@ -3,28 +3,10 @@
   color: #366ed4;
 }
 
-.listbox-area {
+.listboxArea {
   padding: 20px;
   background: #eee;
   border: 1px solid #aaa;
-  font-size: 0;
-}
-
-.left-area,
-.right-area {
-  box-sizing: border-box;
-  display: inline-block;
-  font-size: 14px;
-  vertical-align: top;
-  width: 50%;
-}
-
-.left-area {
-  padding-right: 10px;
-}
-
-.right-area {
-  padding-left: 10px;
 }
 
 [role="listbox"] {
@@ -51,6 +33,10 @@
   left: 0.5em;
 }
 
+.listboxContainer {
+  display: inline-block;
+}
+
 button {
   font-size: 16px;
 }
@@ -59,13 +45,7 @@ button[aria-disabled="true"] {
   opacity: 0.5;
 }
 
-#ss_elem_list {
-  max-height: 18em;
-  overflow-y: auto;
-  position: relative;
-}
-
-#exp_button {
+#triggerButton {
   border-radius: 0;
   font-size: 16px;
   text-align: left;
@@ -74,7 +54,7 @@ button[aria-disabled="true"] {
   position: relative;
 }
 
-#exp_button::after {
+#triggerButton::after {
   width: 0;
   height: 0;
   border-left: 8px solid transparent;
@@ -86,7 +66,7 @@ button[aria-disabled="true"] {
   top: 10px;
 }
 
-#exp_button[aria-expanded="true"]::after {
+#triggerButton[aria-expanded="true"]::after {
   width: 0;
   height: 0;
   border-left: 8px solid transparent;
@@ -99,7 +79,7 @@ button[aria-disabled="true"] {
   top: 10px;
 }
 
-#exp_elem_list {
+.optionList {
   border-top: 0;
   max-height: 10em;
   overflow-y: auto;
@@ -108,24 +88,7 @@ button[aria-disabled="true"] {
   width: 148px;
 }
 
-.hidden {
-  display: none;
-}
-
-.toolbar {
-  font-size: 0;
-}
-
-.toolbar-item {
-  border: 1px solid #aaa;
-  background: #ccc;
-}
-
-.toolbar-item[aria-disabled="false"]:focus {
-  background-color: #eee;
-}
-
-.offscreen {
+.screenReaderText {
   clip: rect(1px 1px 1px 1px);
   clip: rect(1px, 1px, 1px, 1px);
   font-size: 14px;
