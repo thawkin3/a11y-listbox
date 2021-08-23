@@ -25,15 +25,18 @@ In the project directory, you can run:
 
 ### Keyboard Users
 - Pressing the Enter/Space key on the trigger button should show/hide the listbox options
+- TODO: Pressing the Down Arrow or Up Arrow on the trigger button when the listbox is closed should open the listbox
 - Items should be focusable and selectable with the keyboard
   - Down Arrow: moves focus down by one item
   - Up Arrow: moves focus up by one item
   - Enter/Space: selects the currently focused item and closes the listbox
   - Escape: closes the listbox without making a selection
+  - TODO: Home: moves focus to the first item
+  - TODO: End: moves focus to the last item
 
 ### Screen Reader Users
-- Trigger button should have `aria-haspopup="listbox"` and `aria-labelledby` attributes
-- `<ul>` element should have `role="listbox"` and `aria-labelledby` attributes
+- Trigger button should have `aria-haspopup="listbox"`, `aria-labelledby`, and `aria-expanded` attributes
+- `<ul>` element should have `role="listbox"`, `aria-labelledby`, and (TODO) `aria-activedescendant` attributes
 - `<li>` elements should have `role="option"` and `aria-selected` attributes
 
 ## Resources
