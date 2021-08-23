@@ -32,8 +32,8 @@ In the project directory, you can run:
   - Up Arrow: moves focus up by one item
   - Enter/Space: selects the currently focused item and closes the listbox
   - Escape: closes the listbox without making a selection
-  - TODO: Home: moves focus to the first item
-  - TODO: End: moves focus to the last item
+  - Home: moves focus to the first item
+  - End: moves focus to the last item
 - TODO: When focus is moved to an item out of view, listbox should be scrolled so that the item is visible
 
 ### Screen Reader Users
