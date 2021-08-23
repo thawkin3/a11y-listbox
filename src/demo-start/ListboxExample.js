@@ -17,9 +17,9 @@ const items = [
   { id: 'watermelon', label: 'Watermelon' },
 ];
 
-export const ListboxExample = () => (
+export const ListboxExampleStartingPoint = () => (
   <>
-    <h2>Finished Result</h2>
+    <h2>Starting Point</h2>
     <div className="listboxExampleArea">
       <Listbox items={items} label="Choose a fruit" />
     </div>

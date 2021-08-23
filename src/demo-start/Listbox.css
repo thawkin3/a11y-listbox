@@ -4,7 +4,7 @@
   border: 1px solid #aaa;
 }
 
-[role="listbox"] {
+.listboxContainer ul {
   min-height: 18em;
   padding: 0;
   background: white;
@@ -12,7 +12,7 @@
   z-index: 100;
 }
 
-[role="option"] {
+.listboxContainer li {
   display: block;
   padding: 0 1em 0 1.5em;
   position: relative;
@@ -20,12 +20,12 @@
   text-align: left;
 }
 
-[role="option"]:hover,
-[role="option"].focused {
+.listboxContainer li:hover,
+.listboxContainer li.focused {
   background: #bde4ff;
 }
 
-[role="option"][aria-selected="true"]::before {
+.listboxContainer li[aria-selected="true"]::before {
   content: '\2713';
   position: absolute;
   left: 0.5em;
@@ -35,7 +35,7 @@
   display: inline-block;
 }
 
-#triggerButton {
+#triggerButtonStartingPoint {
   border-radius: 0;
   font-size: 16px;
   text-align: left;
@@ -45,7 +45,7 @@
   background: #fff;
 }
 
-#triggerButton::after {
+#triggerButtonStartingPoint::after {
   width: 0;
   height: 0;
   border-left: 8px solid transparent;
@@ -57,7 +57,7 @@
   top: 10px;
 }
 
-#triggerButton[aria-expanded="true"]::after {
+#triggerButtonStartingPoint[aria-expanded="true"]::after {
   width: 0;
   height: 0;
   border-left: 8px solid transparent;
