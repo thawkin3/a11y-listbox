@@ -18,4 +18,4 @@ In the project directory, you can run:
 
 ## Resources
 
-- [Inclusive Components - Cards](https://inclusive-components.design/cards/)
+- [WAI-ARIA Authoring Practices](https://www.w3.org/TR/wai-aria-practices-1.1/#Listbox)
