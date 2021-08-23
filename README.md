@@ -22,10 +22,11 @@ In the project directory, you can run:
 - Clicking the trigger button should show/hide the listbox options
 - Items should be hoverable and selectable with the mouse
 - When an item is clicked, the listbox should be closed
+- TODO: Clicking away from the open listbox should close the listbox
 
 ### Keyboard Users
 - Pressing the Enter/Space key on the trigger button should show/hide the listbox options
-- TODO: Pressing the Down Arrow or Up Arrow on the trigger button when the listbox is closed should open the listbox
+- Pressing the Down Arrow or Up Arrow on the trigger button when the listbox is closed should open the listbox
 - Items should be focusable and selectable with the keyboard
   - Down Arrow: moves focus down by one item
   - Up Arrow: moves focus up by one item
@@ -33,6 +34,7 @@ In the project directory, you can run:
   - Escape: closes the listbox without making a selection
   - TODO: Home: moves focus to the first item
   - TODO: End: moves focus to the last item
+- TODO: When focus is moved to an item out of view, listbox should be scrolled so that the item is visible
 
 ### Screen Reader Users
 - Trigger button should have `aria-haspopup="listbox"`, `aria-labelledby`, and `aria-expanded` attributes
@@ -42,3 +44,4 @@ In the project directory, you can run:
 ## Resources
 
 - [WAI-ARIA Authoring Practices](https://www.w3.org/TR/wai-aria-practices-1.1/#Listbox)
+- [Expand/Collapse Listbox Example](https://www.w3.org/TR/wai-aria-practices-1.1/examples/listbox/listbox-collapsible.html)

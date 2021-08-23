@@ -26,14 +26,22 @@ export const Listbox = ({ items, label }) => {
 
     switch (key) {
       case 'ArrowUp':
-        setFocusedItemIndex(
-          focusedItemIndex - 1 >= 0 ? focusedItemIndex - 1 : items.length - 1
-        );
+        if (isOpen) {
+          setFocusedItemIndex(
+            focusedItemIndex - 1 >= 0 ? focusedItemIndex - 1 : items.length - 1
+          );
+        } else {
+          setIsOpen(true);
+        }
         break;
       case 'ArrowDown':
-        setFocusedItemIndex(
-          focusedItemIndex + 1 <= items.length - 1 ? focusedItemIndex + 1 : 0
-        );
+        if (isOpen) {
+          setFocusedItemIndex(
+            focusedItemIndex + 1 <= items.length - 1 ? focusedItemIndex + 1 : 0
+          );
+        } else {
+          setIsOpen(true);
+        }
         break;
       case 'Enter':
       case 'Space':
