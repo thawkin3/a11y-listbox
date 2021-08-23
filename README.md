@@ -22,7 +22,7 @@ In the project directory, you can run:
 - Clicking the trigger button should show/hide the listbox options
 - Items should be hoverable and selectable with the mouse
 - When an item is clicked, the listbox should be closed
-- TODO: Clicking away from the open listbox should close the listbox
+- Clicking away from the open listbox should close the listbox
 
 ### Keyboard Users
 - Pressing the Enter/Space key on the trigger button should show/hide the listbox options
@@ -38,7 +38,7 @@ In the project directory, you can run:
 
 ### Screen Reader Users
 - Trigger button should have `aria-haspopup="listbox"`, `aria-labelledby`, and `aria-expanded` attributes
-- `<ul>` element should have `role="listbox"`, `aria-labelledby`, and (TODO) `aria-activedescendant` attributes
+- `<ul>` element should have `role="listbox"`, `aria-labelledby`, and `aria-activedescendant` attributes
 - `<li>` elements should have `role="option"` and `aria-selected` attributes
 
 ## Resources
