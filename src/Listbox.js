@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { ListboxOptions } from './ListboxOptions';
 import './Listbox.css';
 
 export const Listbox = ({ items, label }) => {
@@ -6,62 +7,22 @@ export const Listbox = ({ items, label }) => {
   const [selectedItem, setSelectedItem] = useState({});
   const triggerButtonRef = useRef(null);
 
-  const findIndexOfItem = item => {
-    return items.indexOf(item);
+  const handleTriggerButtonClick = () => {
+    console.log('handleTriggerButtonClick');
+    setIsOpen(isOpen => !isOpen);
   };
 
-  const [focusedItemIndex, setFocusedItemIndex] = useState(
-    findIndexOfItem(selectedItem) > -1 ? findIndexOfItem(selectedItem) : 0
-  );
-
-  const handleItemClick = item => {
-    setSelectedItem(item);
-    setFocusedItemIndex(findIndexOfItem(item));
-    setIsOpen(false);
-    triggerButtonRef.current.focus();
-  };
-
-  const handleKeyDown = e => {
+  const handleTriggerButtonKeyDown = e => {
     const key = e.key;
+    console.log('handleTriggerButtonKeyDown', key);
 
     switch (key) {
       case 'ArrowUp':
-        if (isOpen) {
-          setFocusedItemIndex(
-            focusedItemIndex - 1 >= 0 ? focusedItemIndex - 1 : items.length - 1
-          );
-        } else {
-          setIsOpen(true);
-        }
-        break;
       case 'ArrowDown':
-        if (isOpen) {
-          setFocusedItemIndex(
-            focusedItemIndex + 1 <= items.length - 1 ? focusedItemIndex + 1 : 0
-          );
-        } else {
-          setIsOpen(true);
-        }
-        break;
-      case 'Home':
-        if (isOpen) {
-          setFocusedItemIndex(0);
-        }
-        break;
-      case 'End':
-        if (isOpen) {
-          setFocusedItemIndex(items.length - 1);
-        }
-        break;
-      case 'Enter':
-      case 'Space':
-        if (isOpen) {
-          setSelectedItem(items[focusedItemIndex]);
-        }
+        setIsOpen(true);
         break;
       case 'Escape':
         setIsOpen(false);
-        setFocusedItemIndex(findIndexOfItem(selectedItem));
         break;
       default:
       // do nothing
@@ -79,31 +40,19 @@ export const Listbox = ({ items, label }) => {
             aria-expanded={isOpen}
             id="triggerButton"
             ref={triggerButtonRef}
-            onClick={() => setIsOpen(isOpen => !isOpen)}
-            onKeyDown={handleKeyDown}
+            onClick={handleTriggerButtonClick}
+            onKeyDown={handleTriggerButtonKeyDown}
           >
             {selectedItem.label || label}
           </button>
           {isOpen && (
-            <ul
-              className="optionsList"
-              tabIndex="-1"
-              role="listbox"
-              aria-labelledby="listboxLabel"
-            >
-              {items.map((item, index) => (
-                <li
-                  id={item.id}
-                  key={item.id}
-                  role="option"
-                  onClick={() => handleItemClick(item)}
-                  aria-selected={selectedItem.id === item.id}
-                  className={index === focusedItemIndex ? 'focused' : ''}
-                >
-                  {item.label}
-                </li>
-              ))}
-            </ul>
+            <ListboxOptions
+              items={items}
+              selectedItem={selectedItem}
+              setSelectedItem={setSelectedItem}
+              setIsOpen={setIsOpen}
+              triggerButtonRef={triggerButtonRef}
+            />
           )}
         </div>
       </div>
