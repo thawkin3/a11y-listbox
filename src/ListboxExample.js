@@ -18,8 +18,7 @@ const items = [
 ];
 
 export const ListboxExample = () => (
-  <>
-    <p>Choose your favorite fruit.</p>
+  <div className="listboxExampleArea">
     <Listbox items={items} label="Choose a fruit" />
-  </>
+  </div>
 );

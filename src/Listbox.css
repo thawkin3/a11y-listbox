@@ -1,9 +1,4 @@
-.annotate {
-  font-style: italic;
-  color: #366ed4;
-}
-
-.listboxArea {
+.listboxExampleArea {
   padding: 20px;
   background: #eee;
   border: 1px solid #aaa;
@@ -39,14 +34,6 @@
   display: inline-block;
 }
 
-button {
-  font-size: 16px;
-}
-
-button[aria-disabled="true"] {
-  opacity: 0.5;
-}
-
 #triggerButton {
   border-radius: 0;
   font-size: 16px;
@@ -54,6 +41,7 @@ button[aria-disabled="true"] {
   padding: 5px 10px;
   width: 150px;
   position: relative;
+  background: #fff;
 }
 
 #triggerButton::after {
@@ -88,15 +76,4 @@ button[aria-disabled="true"] {
   position: absolute;
   margin: 0;
   width: 148px;
-}
-
-.screenReaderText {
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-  font-size: 14px;
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
 }

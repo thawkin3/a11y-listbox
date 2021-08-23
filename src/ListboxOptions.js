@@ -29,22 +29,39 @@ export const ListboxOptions = ({
     triggerButtonRef.current.focus();
   };
 
+  const scrollItemIntoView = itemIndex => {
+    const itemElement = document.getElementById(items[itemIndex].id);
+    const listboxElement = listboxRef.current;
+
+    if (listboxElement.scrollHeight > listboxElement.clientHeight) {
+      let scrollBottom = listboxElement.clientHeight + listboxElement.scrollTop;
+      let elementBottom = itemElement.offsetTop + itemElement.offsetHeight;
+
+      if (elementBottom > scrollBottom) {
+        listboxElement.scrollTop = elementBottom - listboxElement.clientHeight;
+      } else if (itemElement.offsetTop < listboxElement.scrollTop) {
+        listboxElement.scrollTop = itemElement.offsetTop;
+      }
+    }
+  };
+
   const handleListboxKeyDown = e => {
     const key = e.key;
-    console.log('handleListboxKeyDown', key);
 
     switch (key) {
       case 'ArrowUp':
         e.preventDefault();
-        setFocusedItemIndex(
-          focusedItemIndex - 1 >= 0 ? focusedItemIndex - 1 : items.length - 1
-        );
+        const newFocusedItemIndexAfterArrowUp =
+          focusedItemIndex - 1 >= 0 ? focusedItemIndex - 1 : items.length - 1;
+        setFocusedItemIndex(newFocusedItemIndexAfterArrowUp);
+        scrollItemIntoView(newFocusedItemIndexAfterArrowUp);
         break;
       case 'ArrowDown':
         e.preventDefault();
-        setFocusedItemIndex(
-          focusedItemIndex + 1 <= items.length - 1 ? focusedItemIndex + 1 : 0
-        );
+        const newFocusedItemIndexAfterArrowDown =
+          focusedItemIndex + 1 <= items.length - 1 ? focusedItemIndex + 1 : 0;
+        setFocusedItemIndex(newFocusedItemIndexAfterArrowDown);
+        scrollItemIntoView(newFocusedItemIndexAfterArrowDown);
         break;
       case 'Home':
         setFocusedItemIndex(0);

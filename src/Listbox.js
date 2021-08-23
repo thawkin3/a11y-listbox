@@ -8,13 +8,11 @@ export const Listbox = ({ items, label }) => {
   const triggerButtonRef = useRef(null);
 
   const handleTriggerButtonClick = () => {
-    console.log('handleTriggerButtonClick');
     setIsOpen(isOpen => !isOpen);
   };
 
   const handleTriggerButtonKeyDown = e => {
     const key = e.key;
-    console.log('handleTriggerButtonKeyDown', key);
 
     switch (key) {
       case 'ArrowUp':
@@ -30,8 +28,8 @@ export const Listbox = ({ items, label }) => {
   };
 
   return (
-    <div className="listboxArea">
-      <span id="listboxLabel">{label}</span>
+    <div>
+      <span id="listboxLabel">{label}:</span>
       <div id="listboxWrapper">
         <div className="listboxContainer">
           <button

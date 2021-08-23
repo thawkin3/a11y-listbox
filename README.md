@@ -34,7 +34,7 @@ In the project directory, you can run:
   - Escape: closes the listbox without making a selection
   - Home: moves focus to the first item
   - End: moves focus to the last item
-- TODO: When focus is moved to an item out of view, listbox should be scrolled so that the item is visible
+- When focus is moved to an item out of view, listbox should be scrolled so that the item is visible
 
 ### Screen Reader Users
 - Trigger button should have `aria-haspopup="listbox"`, `aria-labelledby`, and `aria-expanded` attributes
