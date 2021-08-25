@@ -25,15 +25,15 @@ In the project directory, you can run:
 - Clicking away from the open listbox should close the listbox and return the focus to the trigger button
 
 ### Keyboard Users
-- Pressing the Enter/Space key on the trigger button should show/hide the listbox options
-- Pressing the Down Arrow or Up Arrow on the trigger button when the listbox is closed should open the listbox
+- Pressing the `Enter`/`Space` key on the trigger button should show/hide the listbox options
+- Pressing the `Down Arrow` or `Up Arrow` on the trigger button when the listbox is closed should open the listbox
 - Items should be focusable and selectable with the keyboard
-  - Down Arrow: moves focus down by one item
-  - Up Arrow: moves focus up by one item
-  - Enter/Space: selects the currently focused item and closes the listbox and returns the focus to the trigger button
-  - Escape: closes the listbox without making a selection and returns the focus to the trigger button
-  - Home: moves focus to the first item
-  - End: moves focus to the last item
+  - `Down Arrow`: moves focus down by one item
+  - `Up Arrow`: moves focus up by one item
+  - `Enter`: selects the currently focused item and closes the listbox and returns the focus to the trigger button
+  - `Escape`: closes the listbox without making a selection and returns the focus to the trigger button
+  - `Home`: moves focus to the first item
+  - `End`: moves focus to the last item
 - When focus is moved to an item out of view, listbox should be scrolled so that the item is visible
 
 ### Screen Reader Users

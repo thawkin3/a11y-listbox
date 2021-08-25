@@ -38,7 +38,7 @@ export const AcceptanceCriteria = () => (
           <code>Up Arrow</code>: moves focus up by one item
         </li>
         <li>
-          <code>Enter</code>/<code>Space</code>: selects the currently focused
+          <code>Enter</code>: selects the currently focused
           item and closes the listbox and returns the focus to the trigger
           button
         </li>
