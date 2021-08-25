@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/a11y-listbox/build/static/css/main.434d6cac.chunk.css",
+    "main.js": "/a11y-listbox/build/static/js/main.6c0c0778.chunk.js",
+    "main.js.map": "/a11y-listbox/build/static/js/main.6c0c0778.chunk.js.map",
+    "runtime-main.js": "/a11y-listbox/build/static/js/runtime-main.639ed8d9.js",
+    "runtime-main.js.map": "/a11y-listbox/build/static/js/runtime-main.639ed8d9.js.map",
+    "static/js/2.422f9890.chunk.js": "/a11y-listbox/build/static/js/2.422f9890.chunk.js",
+    "static/js/2.422f9890.chunk.js.map": "/a11y-listbox/build/static/js/2.422f9890.chunk.js.map",
+    "index.html": "/a11y-listbox/build/index.html",
+    "static/css/main.434d6cac.chunk.css.map": "/a11y-listbox/build/static/css/main.434d6cac.chunk.css.map",
+    "static/js/2.422f9890.chunk.js.LICENSE.txt": "/a11y-listbox/build/static/js/2.422f9890.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.639ed8d9.js",
+    "static/js/2.422f9890.chunk.js",
+    "static/css/main.434d6cac.chunk.css",
+    "static/js/main.6c0c0778.chunk.js"
+  ]
+}
