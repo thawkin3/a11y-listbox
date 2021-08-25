@@ -70,7 +70,6 @@ export const ListboxOptions = ({
         setFocusedItemIndex(items.length - 1);
         break;
       case 'Enter':
-      case 'Space':
         e.preventDefault();
         setSelectedItem(items[focusedItemIndex]);
         setIsOpen(false);
@@ -90,6 +89,7 @@ export const ListboxOptions = ({
 
   const handleListboxBlur = () => {
     setIsOpen(false);
+    triggerButtonRef.current.focus();
   };
 
   return (
