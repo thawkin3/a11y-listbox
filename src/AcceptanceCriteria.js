@@ -9,8 +9,14 @@ export const AcceptanceCriteria = () => (
     <ol>
       <li>Clicking the trigger button should show/hide the listbox options</li>
       <li>Items should be hoverable and selectable with the mouse</li>
-      <li>When an item is clicked, the listbox should be closed</li>
-      <li>Clicking away from the open listbox should close the listbox</li>
+      <li>
+        When an item is clicked, the listbox should be closed and focus should
+        be returned to the trigger button
+      </li>
+      <li>
+        Clicking away from the open listbox should close the listbox and return
+        the focus to the trigger button
+      </li>
     </ol>
 
     <h3>Keyboard Users</h3>
@@ -33,10 +39,12 @@ export const AcceptanceCriteria = () => (
         </li>
         <li>
           <code>Enter</code>/<code>Space</code>: selects the currently focused
-          item and closes the listbox
+          item and closes the listbox and returns the focus to the trigger
+          button
         </li>
         <li>
-          <code>Escape</code>: closes the listbox without making a selection
+          <code>Escape</code>: closes the listbox without making a selection and
+          returns the focus to the trigger button
         </li>
         <li>
           <code>Home</code>: moves focus to the first item

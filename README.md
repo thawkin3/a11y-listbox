@@ -21,8 +21,8 @@ In the project directory, you can run:
 ### Mouse Users
 - Clicking the trigger button should show/hide the listbox options
 - Items should be hoverable and selectable with the mouse
-- When an item is clicked, the listbox should be closed
-- Clicking away from the open listbox should close the listbox
+- When an item is clicked, the listbox should be closed and focus should be returned to the trigger button
+- Clicking away from the open listbox should close the listbox and return the focus to the trigger button
 
 ### Keyboard Users
 - Pressing the Enter/Space key on the trigger button should show/hide the listbox options
@@ -30,8 +30,8 @@ In the project directory, you can run:
 - Items should be focusable and selectable with the keyboard
   - Down Arrow: moves focus down by one item
   - Up Arrow: moves focus up by one item
-  - Enter/Space: selects the currently focused item and closes the listbox
-  - Escape: closes the listbox without making a selection
+  - Enter/Space: selects the currently focused item and closes the listbox and returns the focus to the trigger button
+  - Escape: closes the listbox without making a selection and returns the focus to the trigger button
   - Home: moves focus to the first item
   - End: moves focus to the last item
 - When focus is moved to an item out of view, listbox should be scrolled so that the item is visible
