@@ -2,6 +2,8 @@
 
 This project is meant to teach software engineers how to create accessible listbox components in React.
 
+You can view the demo app here: http://tylerhawkins.info/a11y-listbox/build/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
